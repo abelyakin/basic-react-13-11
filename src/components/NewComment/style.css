@@ -1,0 +1,10 @@
+.invalid {
+  border: 3px solid red;
+}
+
+.container {
+  max-width: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
