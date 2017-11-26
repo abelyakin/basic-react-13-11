@@ -1,7 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import ArticleList from './ArticleList'
 import ArticlesChart from './ArticlesChart'
 import UserForm from './UserForm'
+import DayRange from './DayRange'
 import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 
@@ -13,7 +14,7 @@ class App extends Component {
     handleSelect = selected => this.setState({ selected })
 
     render() {
-        const {articles} = this.props
+        const { articles } = this.props
         const options = articles.map(article => ({
             label: article.title,
             value: article.id
@@ -21,10 +22,11 @@ class App extends Component {
         return (
             <div>
                 <h1>App name</h1>
+                <DayRange />
                 <UserForm />
-                <Select options = {options} value = {this.state.selected} onChange = {this.handleSelect} multi />
-                <ArticleList articles = {articles} defaultOpenId = {articles[0].id}/>
-                <ArticlesChart articles = {articles} />
+                <Select options={options} value={this.state.selected} onChange={this.handleSelect} multi />
+                <ArticleList articles={articles} defaultOpenId={articles[0].id} />
+                <ArticlesChart articles={articles} />
             </div>
         )
     }
